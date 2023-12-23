@@ -1,0 +1,9 @@
+{
+  "name": "word-count-tool",
+  "version": "1.0.0",
+  "description": "Word Count Tool",
+  "main": "./build/index.js",
+  "author": "David Lane",
+  "license": "UNLICENSED",
+  "private": true
+}
