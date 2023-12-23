@@ -1,0 +1,35 @@
+{
+  "name": "@oceannaeco-tech-tests/word-count-tool-cli",
+  "description": "Command Line Component for Word Count Tool",
+  "type": "module",
+  "main": "bin/index.js",
+  "author": "David Lane",
+  "license": "UNLICENSED",
+  "bin": {
+    "word-count-tool": "./dist/cli.js"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "lint": "eslint src/**/*.ts",
+    "build": "yarn clean && rollup -c ./rollup.config.js",
+    "test": "yarn vitest run",
+    "test:watch": "yarn vitest watch",
+    "prettify": "yarn prettier . --write"
+  },
+  "packageManager": "yarn@4.0.2",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/eslint": "^8",
+    "@types/node": "^20.10.5",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "dependencies": {
+    "@oceannaeco-tech-tests/word-count-tool-core": "workspace:^"
+  }
+}

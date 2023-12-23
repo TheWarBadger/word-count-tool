@@ -1,0 +1,10 @@
+.yarn/unplugged/*
+.yarn/install-state.gz
+.pnp.js
+.pnp.cjs
+.pnp.loader.mjs
+
+**/*.swp
+
+node_modules/
+dist/

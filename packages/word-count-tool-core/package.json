@@ -1,0 +1,49 @@
+{
+  "name": "@oceannaeco-tech-tests/word-count-tool-core",
+  "packageManager": "yarn@4.0.2",
+  "type": "module",
+  "types": "./dist/cjs/types/word-counter.d.ts",
+  "main": "./dist/cjs/word-counter.cjs",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/types/word-counter.d.ts",
+        "default": "./dist/esm/word-counter.mjs"
+      },
+      "require": {
+        "types": "./dist/types/word-counter.d.ts",
+        "default": "./dist/cjs/word-counter.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "lint": "eslint src/**/*.ts",
+    "test": "yarn vitest run",
+    "test:watch": "yarn vitest watch",
+    "clean": "rimraf ./dist",
+    "build": "yarn clean && yarn build:esm && yarn build:cjs && yarn build:types",
+    "build:esm": "rollup -c rollup.config.esm.js",
+    "build:cjs": "rollup -c rollup.config.cjs.js",
+    "build:types": "tsc -p tsconfig.declarations.json",
+    "prepack": "yarn build",
+    "prettify": "yarn prettier . --write"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.5",
+    "@types/eslint": "^8",
+    "@types/node": "^20.10.5",
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "rollup": "^4.9.1",
+    "typescript": "^5.3.3",
+    "vitest": "^1.1.0"
+  },
+  "dependencies": {
+    "tslib": "^2.6.2"
+  }
+}

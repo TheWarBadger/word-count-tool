@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "declaration": true,
+    "esModuleInterop": true,
+    "alwaysStrict": true,
+    "module": "NodeNext"
+  },
+  "moduleResolution": "NodeNext",
+  "include": ["./packages/*/src/**/*"],
+  "exclude": ["**/*.test.ts"],
+  "target": "NodeNext"
+}
